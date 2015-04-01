@@ -64,7 +64,11 @@ class User extends BaseUser
     {
         return $this->firstname . ' ' . $this->lastname;
     }
-
+    
+    /**
+     * 
+     * @return type
+     */
     public function isStudent()
     {
         $res = (get_class($this) == Student::class);

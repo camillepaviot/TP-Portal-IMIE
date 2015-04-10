@@ -5,7 +5,7 @@
  * Description :
  * Author(s) : Camille Paviot
  * Licence : All right reserved.
- * Last update : 01/04/2015
+ * Last update : 10/04/2015
  *
  **************************************************************************/
 namespace Imie\EvaluateBundle\Entity;
@@ -23,6 +23,11 @@ class Exam
      * @var decimal
      */
     protected $scoreMax;
+    
+    /**
+     * @var string
+     */
+    protected $name;
     
     /**
      * Set coefficient
@@ -68,4 +73,47 @@ class Exam
         return $this->scoreMax;
     }
     
+    /**
+     * Set name
+     * 
+     * @param type $name
+     * @return \Imie\EvaluateBundle\Entity\Exam
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    
+    /**
+     * Add scores
+     *
+     * @param \Imie\EvaluateBundle\Entity\Score $score
+     * @return Exam
+     */
+    public function addScore(\Imie\EvaluateBundle\Entity\Score $score)
+    {
+        $this->score[] = $score;
+
+        return $this;
+    }
+    /**
+     * Remove scores
+     *
+     * @param \Imie\EvaluateBundle\Entity\Score $score
+     */
+    public function removeScore(\Imie\EvaluateBundle\Entity\Score $score)
+    {
+        $this->score->removeElement($score);
+    }
 }

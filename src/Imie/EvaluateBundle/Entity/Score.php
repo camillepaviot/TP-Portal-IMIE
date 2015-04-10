@@ -5,7 +5,7 @@
  * Description :
  * Author(s) : Camille Paviot
  * Licence : All right reserved.
- * Last update : 01/04/2015
+ * Last update : 10/04/2015
  *
  **************************************************************************/
 namespace Imie\EvaluateBundle\Entity;
@@ -24,7 +24,7 @@ class Score
      * Set score
      * 
      * @param type $score
-     * @return \Imie\CoreBundle\Entity\Score
+     * @return \Imie\EvaluateBundle\Entity\Score
      */
     public function setScore($score)
     {

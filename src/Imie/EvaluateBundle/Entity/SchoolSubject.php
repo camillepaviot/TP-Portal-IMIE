@@ -5,7 +5,7 @@
  * Description :
  * Author(s) : Camille Paviot
  * Licence : All right reserved.
- * Last update : 01/04/2015
+ * Last update : 10/04/2015
  *
  **************************************************************************/
 namespace Imie\EvaluateBundle\Entity;
@@ -35,7 +35,7 @@ class SchoolSubject
      * Set name
      * 
      * @param type $name
-     * @return \Imie\CoreBundle\Entity\SchoolSubject
+     * @return \Imie\EvaluateBundle\Entity\SchoolSubject
      */
     public function setName($name)
     {
@@ -57,7 +57,7 @@ class SchoolSubject
      * Set listTeacher
      * 
      * @param type $listTeacher
-     * @return \Imie\CoreBundle\Entity\SchoolSubject
+     * @return \Imie\EvaluateBundle\Entity\SchoolSubject
      */
     public function setListTeacher($listTeacher)
     {
@@ -79,7 +79,7 @@ class SchoolSubject
      * Set promotion
      * 
      * @param type $promotion
-     * @return \Imie\CoreBundle\Entity\SchoolSubject
+     * @return \Imie\EvaluateBundle\Entity\SchoolSubject
      */
     public function setPromotion($promotion)
     {
@@ -96,4 +96,28 @@ class SchoolSubject
     {
         return $this->promotion;
     }
+ 
+    
+    /**
+     * Add exams
+     *
+     * @param \Imie\EvaluateBundle\Entity\Exam $exam
+     * @return Exam
+     */
+    public function addExam(\Imie\EvaluateBundle\Entity\Exam $exam)
+    {
+        $this->exam[] = $exam;
+
+        return $this;
+    }
+    /**
+     * Remove exams
+     *
+     * @param \Imie\EvaluateBundle\Entity\Exam $exam
+     */
+    public function removeExam(\Imie\EvaluateBundle\Entity\Exam $exam)
+    {
+        $this->exam->removeElement($exam);
+    }
+
 }
